@@ -11,7 +11,7 @@ export default {
       
       // 第三重：Cloudflare API Token验证
       CLOUDFLARE_API_TOKEN: env.CLOUDFLARE_API_TOKEN || '',
-      CLOUDFLARE_ZONE_ID: env.CLOUDFLARE_ZONE_ID || '',
+      //CLOUDFLARE_ZONE_ID: env.CLOUDFLARE_ZONE_ID || '',
       
       // 配置文件地址
       JSON_CONFIG_URL: env.JSON_CONFIG_URL || 'https://devilardis.github.io/TV-TEST-BOX/TEST.json',
