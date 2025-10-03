@@ -1,19 +1,22 @@
-// _worker.js - 智能请求识别与路由 (双重验证版 + 环境变量保护)
+// _worker.js - 智能请求识别与路由 (双重验证版)
 export default {
   async fetch(request, env, ctx) {
-    // 从环境变量读取配置（敏感信息不再硬编码在代码中）
+    // 配置参数：请根据实际情况修改
     const CONFIG = {
       // 允许访问配置的User-Agent特征（影视仓App通常使用okhttp）
-      ALLOWED_USER_AGENTS: ['okhttp', 'tvbox', '影视仓'],
+      ALLOWED_USER_AGENTS: ['okhttp/3.12.11','okhttp/3.15', 'tvbox', '影视仓'],
       
-      // 有效的Token列表 - 从环境变量读取（在Cloudflare Dashboard中设置）
-      VALID_TOKENS: new Set(JSON.parse(env.SECRET_TOKENS || '["devilardiszuiniubi","xinghui888"]')),
+      // 有效的Token列表 (!!! 请务必替换为您自己的Token !!!)
+      VALID_TOKENS: new Set([
+        'tvbox_sk_abc123def4567890abcdef1234567890', // 示例Token 1，请替换
+        'tvbox_sk_098765fedcbazyxwvutsrqponm123456'  // 示例Token 2，请替换
+      ]),
       
-      // 您的JSON配置文件的实际地址 - 从环境变量读取
-      JSON_CONFIG_URL: env.JSON_CONFIG_URL || 'https://devilardis.github.io/TV-TEST-BOX/TEST.json',
+      // 您的JSON配置文件的实际地址
+      JSON_CONFIG_URL: 'https://devilardis.github.io/TV-TEST-BOX/TEST.json',
       
-      // 非授权请求重定向到的地址 - 从环境变量读取
-      REDIRECT_URL: env.REDIRECT_URL || 'https://www.baidu.com'
+      // 非授权请求重定向到的地址
+      REDIRECT_URL: 'https://www.baidu.com'
     };
 
     // 获取请求信息
@@ -69,6 +72,7 @@ export default {
         }
       } else {
         // 验证失败，重定向
+        // 可以添加更详细的错误提示（可选）
         if (!isAllowedClient && !isTokenValid) {
           console.log('双重验证失败：User-Agent和Token都不匹配');
         } else if (!isAllowedClient) {
