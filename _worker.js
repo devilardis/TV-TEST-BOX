@@ -4,12 +4,12 @@ export default {
     // 配置参数：请根据实际情况修改
     const CONFIG = {
       // 允许访问配置的User-Agent特征（影视仓App通常使用okhttp）
-      ALLOWED_USER_AGENTS: ['okhttp/3.12.11','okhttp/3.15', 'tvbox', '影视仓'],
+      ALLOWED_USER_AGENTS: ['okhttp', 'tvbox', '影视仓'],
       
       // 有效的Token列表 (!!! 请务必替换为您自己的Token !!!)
       VALID_TOKENS: new Set([
-        'tvbox_sk_abc123def4567890abcdef1234567890', // 示例Token 1，请替换
-        'tvbox_sk_098765fedcbazyxwvutsrqponm123456'  // 示例Token 2，请替换
+        'devilardis', // 示例Token 1，请替换
+        'xujing'  // 示例Token 2，请替换
       ]),
       
       // 您的JSON配置文件的实际地址
