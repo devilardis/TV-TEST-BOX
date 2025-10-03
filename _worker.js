@@ -4,7 +4,7 @@ export default {
     // 配置参数：仅保留非敏感信息
     const CONFIG = {
       // 允许访问配置的User-Agent特征（影视仓App通常使用okhttp）
-      ALLOWED_USER_AGENTS: ['okhttp', 'tvbox', '影视仓'],
+      ALLOWED_USER_AGENTS: ['okhttp'],
       
       // 非授权请求重定向到的地址
       REDIRECT_URL: 'https://www.baidu.com'
