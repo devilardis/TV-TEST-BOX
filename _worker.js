@@ -3,7 +3,7 @@ export default {
   async fetch(request, env, ctx) {
     // 配置参数
     const TARGET_UA = 'okhttp/3.12.11';
-    const JSON_URL = 'https://raw.githubusercontent.com/devilardis/TV-TEST-BOX/main/TEST.json';
+    const JSON_URL = 'https://devilardis.github.io/TV-TEST-BOX/TEST.json';
     const REDIRECT_URL = 'https://www.baidu.com';
 
     // 获取请求信息
