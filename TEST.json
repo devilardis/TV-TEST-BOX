@@ -11,12 +11,10 @@
     }
   ],
   "sites": [
-      
-//虎班
 
     {
       "key": "drpy_js_豆瓣",
-      "name": "VIP豆瓣排行[配置中心点主页切换]",
+      "name": "TEST豆瓣排行①",
       "type": 3,
       "api": "csp_Douban",
       "ext": "http://103.45.162.207:25252/仅供测试/lib/douban.json",
@@ -27,28 +25,13 @@
       
         {
             "key": "豆瓣js",
-            "name": "TEST豆瓣排行",
+            "name": "TEST豆瓣排行②",
             "type": 3,
             "api": "csp_Douban",
             "searchable": 0
         },
 
 
-
-    {
-      "key": "配置中心",
-      "name": "❤配置┃中心",
-      "type": 3,
-      "api": "csp_Config",
-      "searchable": 0,
-      "changeable": 0,
-      "indexs": 0,
-      "style": {
-        "type": "rect",
-        "ratio": 1.597
-      }
-    },		
-    
     
     {
       "key": "二小",
@@ -63,20 +46,7 @@
     },
 
 
-    {
-      "key": "应用商店",
-      "name": "🛒本地包更新",
-      "type": 3,
-      "api": "csp_Market",
-      "searchable": 0,
-      "changeable": 0,
-      "ext": "http://47.120.41.246:8025/vip/jar/bendi.php",
-      "jar": "http://47.120.41.246:8025/vip/jar/ouge.php"
-    },
-    
-    
-
-//潇洒
+   
     {
       "key": "荐片",
       "name": "💖荐片｜磁力",
@@ -96,7 +66,7 @@
     },
     {
       "key": "热播影视",
-      "name": "🔥热播｜破解APP链路",
+      "name": "🔥热播｜假装APP",
       "type": 3,
       "api": "csp_AppRJ",
       "searchable": 1,
@@ -108,7 +78,7 @@
     },
     {
       "key": "浪酷影视",
-      "name": "🔥浪酷｜破解APP链路",
+      "name": "🔥浪酷｜假装APP",
       "type": 3,
       "api": "csp_AppRJ",
       "searchable": 1,
@@ -120,7 +90,7 @@
     },
     {
       "key": "迪吧",
-      "name": "🔥迪吧丨破解APP链路",
+      "name": "🔥迪吧丨假装APP",
       "type": 3,
       "quickSearch": 1,
       "api": "csp_AppGet",
@@ -136,7 +106,7 @@
     },
     {
       "key": "豆丁",
-      "name": "🔥豆丁丨破解APP链路",
+      "name": "🔥豆丁丨假装APP",
       "type": 3,
       "quickSearch": 1,
       "api": "csp_AppGet",
@@ -152,7 +122,7 @@
     },    
     {
       "key": "五八",
-      "name": "🔥五八丨破解APP链路",
+      "name": "🔥五八丨假装APP",
       "type": 3,
       "quickSearch": 1,
       "api": "csp_AppGet",
@@ -168,7 +138,7 @@
     },    
     {
       "key": "火狐",
-      "name": "🔥火狐丨破解APP链路",
+      "name": "🔥火狐丨假装APP",
       "type": 3,
       "quickSearch": 1,
       "api": "csp_AppGet",
@@ -184,7 +154,7 @@
     },    
     {
       "key": "斗量",
-      "name": "🔥斗量丨破解APP链路",
+      "name": "🔥斗量丨假装APP",
       "type": 3,
       "quickSearch": 1,
       "api": "csp_AppGet",
@@ -233,7 +203,7 @@
       "quickSearch": 1,
       "filterable": 1
     },
-//讴歌    
+  
     
     {
       "key": "柠檬",
@@ -327,11 +297,7 @@
       "ext": "https://gitlab.com/duomv/dzhipy/-/raw/main/drpy_js/6V新版[磁].js"
     },
     
-    
-//小米
-
-
-
+  
 
 
     {
@@ -432,7 +398,7 @@
       "jar": "http://47.120.41.246:8025/vip/jar/banhu.php"
     },  
     
-    
+//以下内容屏蔽
     {
       "key": "儿童",
       "name": "📚┃儿童┃启蒙",
@@ -605,52 +571,6 @@
       "name": "Json轮询",
       "type": 2,
       "url": "Sequence"
-    },
-    {
-      "name": "自定：请先设置",
-      "type": 1,
-      "url": "http://127.0.0.1:9978/proxy?do=seachdanmu&go=getuserjx&url="
-    },
-    {
-      "name": "虎斑XM",
-      "type": 1,
-      "url": "http://127.0.0.1:9978/proxy?do=seachdanmu&go=getXmflvjx&url=",
-      "ext": {
-        "header": {
-          "Accept": "*/*",
-          "Origin": "https://jx.xmflv.com"
-        }
-      }
-    },
-    {
-      "name": "虎斑szy",
-      "type": 1,
-      "url": "http://127.0.0.1:9978/proxy?do=seachdanmu&go=getszyjx&url="
-    },
-    {
-      "name": "虎斑mt4K",
-      "type": 1,
-      "url": "http://127.0.0.1:9978/proxy?do=seachdanmu&go=getmgtvjx&url="
-    },
-    {
-      "name": "虎斑HJ",
-      "type": 1,
-      "url": "http://127.0.0.1:9978/proxy?do=seachdanmu&go=gethuajx&url="
-    },
-    {
-      "name": "虎斑WS",
-      "type": 1,
-      "url": "http://127.0.0.1:9978/proxy?do=seachdanmu&go=getWsjx&url="
-    },
-    {
-      "name": "虎斑AB",
-      "type": 1,
-      "url": "http://127.0.0.1:9978/proxy?do=seachdanmu&go=getAbjx&url="
-    },
-    {
-      "name": "虎斑V6",
-      "type": 1,
-      "url": "http://127.0.0.1:9978/proxy?do=seachdanmu&go=getV6jx&url="
     }
   ],
   "flags": [
@@ -1011,4 +931,5 @@
     "iqiyi.hbuioo.com",
     "vip.ffzyad.com"
   ]
+
 }
