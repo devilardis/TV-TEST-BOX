@@ -4,7 +4,7 @@ export default {
     // 配置参数：请根据实际情况修改
     const CONFIG = {
       // 允许访问配置的User-Agent特征（影视仓App通常使用okhttp）
-      ALLOWED_USER_AGENTS: ['okhttp/3.12.11', 'tvbox', '影视仓'],
+      ALLOWED_USER_AGENTS: ['okhttp/3.12.11','okhttp/3.15', 'tvbox', '影视仓'],
       // 您的JSON配置文件的实际地址（可以是GitHub Raw地址或其他可访问的URL）
       JSON_CONFIG_URL: 'https://devilardis.github.io/TV-TEST-BOX/TEST.json',
       // 非授权请求重定向到的地址
