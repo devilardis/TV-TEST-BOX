@@ -1,23 +1,23 @@
-// _worker.js - 三重验证保护 (User-Agent + 软件Token + Cloudflare Token)
+// _worker.js - 三重验证保护 (优化版，无硬编码默认值)
 export default {
   async fetch(request, env, ctx) {
-    // 从环境变量读取配置（安全敏感信息）
+    // 完全从环境变量读取配置（无硬编码默认值）
     const CONFIG = {
       // 第一重：允许访问的User-Agent特征
-      ALLOWED_USER_AGENTS: JSON.parse(env.ALLOWED_USER_AGENTS || '["okhttp","tvbox","影视仓"]'),
+      ALLOWED_USER_AGENTS: JSON.parse(env.ALLOWED_USER_AGENTS),
       
       // 第二重：有效的软件Token列表
-      VALID_APP_TOKENS: new Set(JSON.parse(env.SECRET_APP_TOKENS || '[]')),
+      VALID_APP_TOKENS: new Set(JSON.parse(env.SECRET_APP_TOKENS)),
       
       // 第三重：Cloudflare API Token验证
-      CLOUDFLARE_API_TOKEN: env.CLOUDFLARE_API_TOKEN || '',
-      //CLOUDFLARE_ZONE_ID: env.CLOUDFLARE_ZONE_ID || '',
+      CLOUDFLARE_API_TOKEN: env.CLOUDFLARE_API_TOKEN,
+      //CLOUDFLARE_ZONE_ID: env.CLOUDFLARE_ZONE_ID,
       
       // 配置文件地址
-      JSON_CONFIG_URL: env.JSON_CONFIG_URL || 'https://devilardis.github.io/TV-TEST-BOX/TEST.json',
+      JSON_CONFIG_URL: env.JSON_CONFIG_URL,
       
       // 重定向地址
-      REDIRECT_URL: env.REDIRECT_URL || 'https://www.baidu.com',
+      REDIRECT_URL: env.REDIRECT_URL,
       
       // 调试模式
       DEBUG_MODE: env.DEBUG_MODE === 'true'
@@ -39,7 +39,7 @@ export default {
       userAgent.toLowerCase().includes(ua.toLowerCase())
     );
 
-    // 2. 第二重验证：软件Token检测（支持URL参数和Authorization头）
+    // 2. 第二重验证：软件Token检测
     let isAppTokenValid = false;
     let providedAppToken = null;
 
@@ -60,7 +60,7 @@ export default {
       }
     }
 
-    // 3. 第三重验证：Cloudflare Token验证（特殊头验证）
+    // 3. 第三重验证：Cloudflare Token验证
     let isCloudflareTokenValid = false;
     const cfTokenHeader = request.headers.get('X-CF-Token');
     if (cfTokenHeader && cfTokenHeader === CONFIG.CLOUDFLARE_API_TOKEN) {
