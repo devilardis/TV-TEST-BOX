@@ -1,52 +1,36 @@
-// _worker.js - 智能请求识别与路由 (双重验证版)
+// _worker.js - 智能请求识别 (仅User-Agent验证版)
 export default {
   async fetch(request, env, ctx) {
-    // 配置参数：请根据实际情况修改
+    // 配置参数：仅保留非敏感信息
     const CONFIG = {
       // 允许访问配置的User-Agent特征（影视仓App通常使用okhttp）
       ALLOWED_USER_AGENTS: ['okhttp', 'tvbox', '影视仓'],
-      
-      // 有效的Token列表 (!!! 请务必替换为您自己的Token !!!)
-      VALID_TOKENS: new Set([
-        'devilardis', // 示例Token 1，请替换
-        'xujing'  // 示例Token 2，请替换
-      ]),
-      
-      // 您的JSON配置文件的实际地址
-      JSON_CONFIG_URL: 'https://devilardis.github.io/TV-TEST-BOX/TEST.json',
       
       // 非授权请求重定向到的地址
       REDIRECT_URL: 'https://www.baidu.com'
     };
 
+    // 从环境变量获取配置文件地址（敏感信息不暴露在代码中）
+    const JSON_CONFIG_URL = env.JSON_CONFIG_URL;
+
     // 获取请求信息
     const url = new URL(request.url);
     const userAgent = request.headers.get('user-agent') || '';
     const path = url.pathname;
-    const token = url.searchParams.get('token'); // 从URL参数获取Token
-    const authHeader = request.headers.get('Authorization'); // 从Authorization头获取Token
 
     // 调试日志
-    console.log(`[${new Date().toISOString()}] 请求路径: ${path}, UA: ${userAgent.substring(0, 50)}..., Token: ${token || 'None'}`);
+    console.log(`[${new Date().toISOString()}] 请求路径: ${path}, UA: ${userAgent.substring(0, 50)}...`);
 
-    // 1. 双重验证：User-Agent和Token都必须匹配
+    // 1. 单一验证：仅User-Agent验证
     const isAllowedClient = CONFIG.ALLOWED_USER_AGENTS.some(ua => userAgent.includes(ua));
-    
-    let isTokenValid = false;
-    if (token && CONFIG.VALID_TOKENS.has(token)) {
-      isTokenValid = true;
-    } else if (authHeader && authHeader.startsWith('Bearer ')) {
-      const bearerToken = authHeader.substring(7);
-      isTokenValid = CONFIG.VALID_TOKENS.has(bearerToken);
-    }
 
     // 2. 处理对根路径（/）的请求
     if (path === '/') {
-      // 必须同时满足User-Agent和Token验证
-      if (isAllowedClient && isTokenValid) {
-        // 双重验证通过，返回JSON配置
+      // 仅需满足User-Agent验证
+      if (isAllowedClient) {
+        // 验证通过，返回JSON配置
         try {
-          const configResponse = await fetch(CONFIG.JSON_CONFIG_URL);
+          const configResponse = await fetch(JSON_CONFIG_URL);
           
           if (configResponse.ok) {
             const configData = await configResponse.text();
@@ -72,26 +56,18 @@ export default {
         }
       } else {
         // 验证失败，重定向
-        // 可以添加更详细的错误提示（可选）
-        if (!isAllowedClient && !isTokenValid) {
-          console.log('双重验证失败：User-Agent和Token都不匹配');
-        } else if (!isAllowedClient) {
-          console.log('验证失败：User-Agent不匹配');
-        } else if (!isTokenValid) {
-          console.log('验证失败：Token无效');
-        }
-        
+        console.log('验证失败：User-Agent不匹配');
         return Response.redirect(CONFIG.REDIRECT_URL, 302);
       }
     }
 
-    // 3. 显式的配置接口 (同样需要双重验证)
+    // 3. 显式的配置接口 (同样仅需User-Agent验证)
     if (path === '/api/config') {
-      if (!isAllowedClient || !isTokenValid) {
-        return new Response('Forbidden: Valid User-Agent and Token required', { status: 403 });
+      if (!isAllowedClient) {
+        return new Response('Forbidden: Valid User-Agent required', { status: 403 });
       }
       
-      const configResponse = await fetch(CONFIG.JSON_CONFIG_URL);
+      const configResponse = await fetch(JSON_CONFIG_URL);
       const configData = await configResponse.text();
       return new Response(configData, {
         status: 200,
@@ -102,7 +78,23 @@ export default {
       });
     }
 
-    // 4. 对于其他未知路径，返回404
+    // 4. 健康检查端点（无需验证）
+    if (path === '/health') {
+      return new Response(JSON.stringify({
+        status: 'healthy',
+        timestamp: new Date().toISOString(),
+        worker: 'tvbox-config-router',
+        config: {
+          hasUserAgents: CONFIG.ALLOWED_USER_AGENTS.length > 0,
+          configUrlSet: !!JSON_CONFIG_URL
+        }
+      }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    // 5. 对于其他未知路径，返回404
     return new Response('Not Found', { status: 404 });
   }
 };
