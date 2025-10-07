@@ -32,7 +32,7 @@ export default {
             --success: #2ecc71;
             --danger: #e74c3c;
             --warning: #f39c12;
-            --light: #ecf极f1;
+            --light: #ecff1;
             --dark: #34495e;
         }
         
@@ -78,7 +78,7 @@ export default {
         
         .stats {
             display: flex;
-            gap: 20极;
+            gap: 20;
             margin-bottom: 20px;
         }
         
@@ -87,7 +87,7 @@ export default {
             background: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 极.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
             text-align: center;
         }
         
@@ -137,12 +137,12 @@ export default {
             padding: 12px 15px;
             text-align: left;
             border-bottom: 1px solid #eee;
-极      }
+      }
         
         table th {
             background-color: #f8f9fa;
             font-weight: 600;
-           极olor: var(--dark);
+           olor: var(--dark);
         }
         
         table tr:hover {
