@@ -8,22 +8,24 @@ export default {
     const UA_PATTERNS_ENV_VAR = 'UA_PATTERNS';
     const ADMIN_USERNAME = env.ADMIN_USERNAME || 'admin';
     const ADMIN_PASSWORD = env.ADMIN_PASSWORD || 'password';
-    const BYPASS_TOKEN = env.BYPASS_TOKEN || ''; // 新增：绕过UA检查的token
+    const BYPASS_TOKEN = env.BYPASS_TOKEN || '';
 
     // ========== 1. 获取请求基本信息 ==========
     const url = new URL(request.url);
     const userAgent = request.headers.get('User-Agent') || '';
     const clientIP = request.headers.get('CF-Connecting-IP') || 'unknown';
     const pathname = url.pathname;
-    const token = url.searchParams.get('token'); // 获取URL中的token参数
+    const token = url.searchParams.get('token');
 
-    console.log(`[Worker] Request from IP: ${clientIP}, Path: ${pathname}, Token: ${token ? 'provided' : 'not provided'}`);
+    console.log(`[Worker] Request from IP: ${clientIP}, Path: ${pathname}, Token: ${token ? 'provided' : 'not provided'}, BYPASS_TOKEN: ${BYPASS_TOKEN ? 'set' : 'not set'}`);
 
-    // ========== Token验证：如果提供了有效token，则跳过UA检查 ==========
+    // ========== Token验证：修复逻辑 ==========
     let isBypassUA = false;
-    if (token && BYPASS_TOKEN && token === BYPASS_TOKEN) {
+    if (BYPASS_TOKEN && token && token === BYPASS_TOKEN) {
         isBypassUA = true;
         console.log(`[Worker] ✅ Token validation passed, skipping UA check for IP: ${clientIP}`);
+    } else if (BYPASS_TOKEN && token) {
+        console.log(`[Worker] ❌ Token validation failed. Provided: ${token}, Expected: ${BYPASS_TOKEN}`);
     }
 
     // ========== 管理页面路由 ==========
@@ -33,6 +35,8 @@ export default {
 
     // ========== 2. 高级UA验证（如果未使用token绕过） ==========
     if (!isBypassUA) {
+        console.log(`[Worker] Proceeding with UA check for IP: ${clientIP}`);
+        // 原有的UA检查逻辑保持不变...
         let isUAValid = false;
         let matchedPattern = '';
         let clientType = 'unknown';
@@ -92,7 +96,7 @@ export default {
             }
 
             if (!isUAValid) {
-                console.log(`[Worker] ❌❌ UA validation failed. IP: ${clientIP}, UA: ${userAgent}`);
+                console.log(`[Worker] ❌❌❌❌ UA validation failed. IP: ${clientIP}, UA: ${userAgent}`);
                 return Response.redirect(REDIRECT_URL, 302);
             }
 
@@ -103,8 +107,13 @@ export default {
                 return Response.redirect(REDIRECT_URL, 302);
             }
         }
+    } else {
+        console.log(`[Worker] ✅ UA check bypassed via token for IP: ${clientIP}`);
     }
 
+    // 其余代码保持不变...
+  }
+};
     // ========== 记录访问日志到D1数据库 ==========
     try {
         if (env.DB) {
