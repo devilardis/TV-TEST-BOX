@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动跳转</title>
+    <meta name="description" content="自动跳转到目标地址">
+    <!-- Cloudflare Analytics 会自动收集访问数据 -->
+</head>
+<body>
+    <script>
+        // 记录访问到控制台，便于调试
+        console.log('访问记录已触发');
+        // 立即跳转到目标地址
+        window.location.replace('http://124.71.19.220/get');
+    </script>
+    <!-- 如果JavaScript被禁用，显示备用内容 -->
+    <noscript>
+        <div style="text-align: center; padding: 50px;">
+            <h1>正在跳转到目标页面...</h1>
+            <p>如果没有自动跳转，请点击以下链接：</p>
+            <a href="http://124.71.19.200/get">前往目标页面</a>
+        </div>
+    </noscript>
+</body>
+</html>
