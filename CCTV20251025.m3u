@@ -1,48 +1,42 @@
 #EXTM3U
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml,https://epg.112114.xyz/pp.xml,https://epg.pw/xmltv/epg_lite.xml"
-#EXTINF:-1 group-title="【该播放列表由www.iptv-search.com生成】",请到www.iptv-search.com获取最新直播源
-http://nas.hssvm.com:8888/udp/225.1.1.144:5002
-#EXTINF:-1 group-title="【该播放列表由www.iptv-search.com生成】",生成日期:2025-10-24
-http://nas.hssvm.com:8888/udp/225.1.1.144:5002
-#EXTINF:-1 group-title="【该播放列表由www.iptv-search.com生成】",请到www.iptv-search.com获取最新直播源
-http://nas.hssvm.com:8888/udp/225.1.1.144:5002
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV1.png",CCTV1
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV1.png",CCTV1
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV1&t=1760585411&token=df1eaa2ae08936d8da14fe1274694f28
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV2.png",CCTV2
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV2.png",CCTV2
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV2&t=1760585411&token=b62ec217c9ea32b3ba58ffee43c1e567
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV3.png",CCTV3
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV3.png",CCTV3
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV3&t=1760585411&token=d62685a3c74216fb529a697d66a6e0c9
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV4.png",CCTV4
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV4.png",CCTV4
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV4&t=1760585411&token=30206ac2abdd37a1d4104f2bc86536db
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV4oz.png",CCTV4欧洲
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV4oz.png",CCTV4欧洲
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV4%E6%AC%A7%E6%B4%B2&t=1760585411&token=da268c366a4e6adc06b5dc3324870b76
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV4mz.png",CCTV4美洲
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV4mz.png",CCTV4美洲
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV4%E7%BE%8E%E6%B4%B2&t=1760585411&token=11cbe0ca2025e00d706af0bcbbdfffe3
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV5.png",CCTV5
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV5.png",CCTV5
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV5&t=1760585411&token=11ca3f429dba1df4ad42fb1f50512dfa
-#EXTINF:-1  group-title="mylist" tvg-logo="https://i.imgur.com/OK8mdJV.png",CCTV5+
+#EXTINF:-1  group-title="央视" tvg-logo="https://i.imgur.com/OK8mdJV.png",CCTV5+
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV5%2B&t=1760585411&token=4555e6dbb64f42fbc0175bc8069bd14d
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV6.png",CCTV6
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV6.png",CCTV6
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV6&t=1760585411&token=944b6327597e5ab6e14998beedd01e06
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV7.png",CCTV7
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV7.png",CCTV7
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV7&t=1760585411&token=ef4566ffc523128175204c2939d3a5b8
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV8.png",CCTV8
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV8.png",CCTV8
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV8&t=1760585411&token=68364a3ee862acfdd15da4c8d59bac6e
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV9.png",CCTV9
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV9.png",CCTV9
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV9&t=1760585411&token=da9c8b1a8c75b3a27e5d2813c00dc7b2
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV10.png",CCTV10
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV10.png",CCTV10
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV10&t=1760585411&token=904dc116f371d163a15a0f3a5bfe48cc
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV11.png",CCTV11
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV11.png",CCTV11
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV11&t=1760585411&token=821b5631124e90e68b543463dba4e16a
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV12.png",CCTV12
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV12.png",CCTV12
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV12&t=1760585411&token=59ec7ffad1e9e9e38e9afbc330fbea04
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV13.png",CCTV13
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV13.png",CCTV13
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV13&t=1760585411&token=cde87db33a1a9c36c65a2f73e3a9ff07
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV14.png",CCTV14
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV14.png",CCTV14
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV14&t=1760585411&token=80bd93b5d36b1ec98fcd22d9f926ee09
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV15.png",CCTV15
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV15.png",CCTV15
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV15&t=1760585411&token=09554eaa18bb7938b0a35bcb56022466
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV16.png",CCTV16
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV16.png",CCTV16
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV16&t=1760585411&token=eb2b75771d80d23c058e0a85107d1183
-#EXTINF:-1  group-title="mylist" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV17.png",CCTV17
+#EXTINF:-1  group-title="央视" tvg-logo="https://iptv-search.com/static/channellogo/img/CCTV17.png",CCTV17
 https://stream.iptv-search.com/iptv_test/main.php?id=CCTV17&t=1760585411&token=89eb1f4f348a08ea121906fb91d25934
