@@ -6,7 +6,7 @@
     {
       "name": "IPTV直播",
       "type": 0,
-      "url": "http://47.120.41.246:8899/xinzb.txt",
+      "url": "https://raw.githubusercontent.com/devilardis/luanqibazao/refs/heads/main/IPTV.TXT",
       "playerType": 1
     }
   ],
