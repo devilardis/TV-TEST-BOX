@@ -1,7 +1,7 @@
 {
   "spider": "http://47.120.41.246:8025/vip/jar/ouge.php",
   "wallpaper": "http://bobohome.ignorelist.com:20247/bing",
-  "warningText": "测试至2025/10/30止，继续使用加Q群1041821381",
+  "warningText": "25/10/30停服，继续使用加Q群1041821381",
   "lives": [
     {
       "name": "IPTV直播",
@@ -16,7 +16,7 @@
   //道长
 		{
 			"key": "hipy_js_豆瓣[官]",
-			"name": "测试至2025/10/30止，继续使用加Q群1041821381",
+			"name": "25/10/30停服，继续使用加Q群1041821381",
 			"type": 3,
 			"api": "https://gitlab.com/duomv/dzhipy/-/raw/main/drpy_libs/drpy2.min.js",
 			"searchable": 1,
@@ -27,7 +27,7 @@
 		},
     {
       "key": "drpy_js_豆瓣",
-      "name": "测试至2025/10/30止，继续使用加Q群1041821381",
+      "name": "25/10/30停服，继续使用加Q群1041821381",
       "type": 3,
       "api": "csp_Douban"
     },
