@@ -1,7 +1,7 @@
 央卫直播①,#genre#
 
-CCTV1HD,http://180.130.152.188:5003/cctv1.m3u8?token=7375646f1c16783df3012b993c457020a0973d2c&z=1f4e
-CCTV2HD,http://180.130.152.188:5003/cctv2.m3u8?token=7375646f08a8e8a6aca496dd916b351ca34fb0ea&z=1f4e
+CCTV1HD,http://58.19.180.108:9981/stream/channelid/1198995092?profile=pass
+CCTV2HD,http://58.19.180.108:9981/stream/channelid/980211261?profile=pass
 CCTV10,http://58.19.180.108:9981/stream/channelid/197590532?profile=pass
 CCTV11,http://58.19.180.108:9981/stream/channelid/550290687?profile=pass
 CCTV12,http://58.19.180.108:9981/stream/channelid/857624678?profile=pass
